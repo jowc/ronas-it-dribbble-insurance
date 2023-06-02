@@ -3,8 +3,17 @@ module.exports = {
   content: ["./src/**/*.{html,ts}"],
   theme: {
     extend: {
-      heading: "Inter",
-      "body-font": "Libre Baskerville",
+      fontFamily: {
+        heading: "Inter",
+        "body-font": "Libre Baskerville",
+      },
+      colors: {
+        primary: {
+          50: "#0c1d33",
+          100: "#070d19",
+        },
+        accent: "#91dded",
+      },
     },
   },
   plugins: [],
