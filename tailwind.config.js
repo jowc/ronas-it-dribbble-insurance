@@ -2,7 +2,10 @@
 module.exports = {
   content: ["./src/**/*.{html,ts}"],
   theme: {
-    extend: {},
+    extend: {
+      heading: "Inter",
+      "body-font": "Libre Baskerville",
+    },
   },
   plugins: [],
 };
