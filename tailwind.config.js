@@ -4,8 +4,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        heading: "Inter",
-        "body-font": "Libre Baskerville",
+        heading: "Libre Baskerville",
+        "body-font": "Roboto",
       },
       colors: {
         primary: {
