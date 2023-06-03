@@ -1,1 +1,73 @@
 @import './tailwind.scss';
+@import './variables.scss';
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    &::before,
+    &::after {
+        box-sizing: border-box;
+    }
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    width: 100%;
+    font-family: var(--mp-body-family);
+    font-weight: 500;
+    color: white;
+
+    img,
+    picture,
+    video,
+    canvas,
+    svg {
+        display: block;
+        max-width: 100%;
+    }
+
+    input,
+    button,
+    textarea,
+    select {
+        font: inherit;
+    }
+
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        overflow-wrap: break-word;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-weight: 700;
+        font-family: var(--mp-header-family);
+    }
+    h1{
+        font-size: 6.5rem;
+        font-weight: 900;
+    }
+    h3{
+        font-size: 2.3rem;
+        font-weight: 900;
+    }
+}
