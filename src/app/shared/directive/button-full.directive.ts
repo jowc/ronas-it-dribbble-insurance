@@ -4,8 +4,10 @@ import { Directive, ElementRef, Input, OnInit } from '@angular/core';
   selector: '[mpButton]',
   standalone: true,
 })
-export class ButtonFullDirective implements OnInit {
-  @Input() mpButtonTheme: 'full' | 'outline' = 'full';
+export class MpButtonDirective implements OnInit {
+  @Input({ required: true }) mpButtonTheme: 'full' | 'outline' = 'full';
+  @Input() mpButtonBgColor: string = '';
+  @Input() mpButtonColor: string = '';
 
   constructor(private el: ElementRef<HTMLButtonElement>) {}
 
@@ -16,17 +18,17 @@ export class ButtonFullDirective implements OnInit {
         'py-3',
         'px-9',
         'rounded-3xl',
-        'text-white'
+        this.mpButtonColor ? this.mpButtonColor : 'text-white'
       );
     } else {
       console.log('full');
       this.el.nativeElement.classList.add(
-        'bg-accent',
+        this.mpButtonBgColor ? this.mpButtonBgColor : 'bg-accent',
         'py-3',
         'px-9',
         'rounded-3xl',
-        'text-primary-100',
-        'font-semibold'
+        'font-semibold',
+        this.mpButtonColor ? this.mpButtonColor : 'text-primary-100'
       );
     }
   }

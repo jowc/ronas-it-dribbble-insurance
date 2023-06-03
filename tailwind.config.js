@@ -13,6 +13,7 @@ module.exports = {
           100: "#070d19",
         },
         accent: "#91dded",
+        pinkish: "#ff6f81",
       },
     },
   },
