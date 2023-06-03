@@ -5,7 +5,7 @@ module.exports = {
     extend: {
       fontFamily: {
         heading: "Libre Baskerville",
-        "body-font": "Roboto",
+        "body-font": "Poppins",
       },
       colors: {
         primary: {

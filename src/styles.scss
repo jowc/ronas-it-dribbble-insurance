@@ -1,4 +1,5 @@
 @import './tailwind.scss';
+@import './variables.scss';
 
 
 
@@ -22,7 +23,7 @@ body {
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
     width: 100%;
-    font-family: 'Roboto';
+    font-family: var(--mp-body-family);
     font-weight: 500;
     color: white;
 
@@ -52,10 +53,17 @@ body {
         overflow-wrap: break-word;
     }
 
-    .mp{
-
-        &-content{
-            @apply max-w-6xl px-8 mx-auto;
-        }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-weight: 700;
+        font-family: var(--mp-header-family);
+    }
+    h1{
+        font-size: 6.5rem;
+        font-weight: 900;
     }
 }
