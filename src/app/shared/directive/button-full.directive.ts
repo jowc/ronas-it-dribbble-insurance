@@ -25,7 +25,7 @@ export class MpButtonDirective implements OnInit {
       this.el.nativeElement.classList.add(
         this.mpButtonBgColor ? this.mpButtonBgColor : 'bg-accent',
         'py-3',
-        'px-9',
+        'px-11',
         'rounded-3xl',
         'font-semibold',
         this.mpButtonColor ? this.mpButtonColor : 'text-primary-100'

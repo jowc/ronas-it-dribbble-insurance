@@ -9,11 +9,14 @@ module.exports = {
       },
       colors: {
         primary: {
-          50: "#0c1d33",
-          100: "#070d19",
+          50: "#1f283d",
+          100: "#0b0f17",
         },
-        accent: "#91dded",
-        pinkish: "#ff6f81",
+        accent: "#84d7e9",
+        pinkish: "#ff6476",
+      },
+      borderRadius: {
+        "4xl": "3.0rem",
       },
     },
   },

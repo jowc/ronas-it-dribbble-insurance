@@ -6,6 +6,7 @@ import { FooterFormComponent } from './shared/components/footer-form/footer-form
 import { HeroSectionComponent } from './components/hero-section/hero-section.component';
 import { ImageSectionComponent } from './components/image-section/image-section.component';
 import { TestimonialSectionComponent } from './components/testimonial-section/testimonial-section.component';
+import { ChooseFundComponent } from './components/choose-fund/choose-fund.component';
 
 @Component({
   selector: 'app-root',
@@ -19,6 +20,7 @@ import { TestimonialSectionComponent } from './components/testimonial-section/te
     HeroSectionComponent,
     ImageSectionComponent,
     TestimonialSectionComponent,
+    ChooseFundComponent,
   ],
 })
 export class AppComponent {}
