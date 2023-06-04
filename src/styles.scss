@@ -61,9 +61,14 @@ body {
     h6 {
         font-weight: 700;
         font-family: var(--mp-header-family);
+        line-height: 1.2;
     }
     h1{
         font-size: 6.5rem;
+        font-weight: 900;
+    }
+    h2{
+        font-size: 4rem;
         font-weight: 900;
     }
     h3{
