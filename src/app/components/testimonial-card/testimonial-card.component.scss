@@ -1,0 +1,16 @@
+.swiper::ng-deep{
+    --swiper-pagination-color: white;
+    --swiper-pagination-bullet-inactive-color: white;
+}
+
+
+.swiper{
+    &::ng-deep{
+        margin: 0;
+        width: 650px;
+        padding-bottom: 4rem;
+    }
+    &-slide ::ng-deep{
+        display: flex;
+    }
+}
