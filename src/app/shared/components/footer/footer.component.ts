@@ -1,13 +1,15 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, signal } from '@angular/core';
+import { FooterFormComponent } from '../footer-form/footer-form.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { faLifeRing } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-footer',
   standalone: true,
-  imports: [CommonModule],
+  imports: [FooterFormComponent, FontAwesomeModule],
   templateUrl: './footer.component.html',
-  styleUrls: ['./footer.component.scss']
+  styleUrls: ['../../section.component.scss', './footer.component.scss'],
 })
 export class FooterComponent {
-
+  faLifeRing = signal(faLifeRing);
 }

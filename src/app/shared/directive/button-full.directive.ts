@@ -13,7 +13,6 @@ export class MpButtonDirective implements OnInit {
 
   ngOnInit(): void {
     if (this.mpButtonTheme !== 'full') {
-      console.log('outline');
       this.el.nativeElement.classList.add(
         'py-3',
         'px-9',
@@ -21,11 +20,10 @@ export class MpButtonDirective implements OnInit {
         this.mpButtonColor ? this.mpButtonColor : 'text-white'
       );
     } else {
-      console.log('full');
       this.el.nativeElement.classList.add(
         this.mpButtonBgColor ? this.mpButtonBgColor : 'bg-accent',
         'py-3',
-        'px-9',
+        'px-11',
         'rounded-3xl',
         'font-semibold',
         this.mpButtonColor ? this.mpButtonColor : 'text-primary-100'
