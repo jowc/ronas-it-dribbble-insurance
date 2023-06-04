@@ -2,7 +2,11 @@ import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faLifeRing, faKey } from '@fortawesome/free-solid-svg-icons';
+import {
+  faLifeRing,
+  faKey,
+  faChevronDown,
+} from '@fortawesome/free-solid-svg-icons';
 import { MpButtonDirective } from 'src/app/shared/directive/button-full.directive';
 
 @Component({
@@ -15,4 +19,5 @@ import { MpButtonDirective } from 'src/app/shared/directive/button-full.directiv
 export class HeaderComponent {
   faLifeRing = signal(faLifeRing);
   faKey = signal(faKey);
+  faChevronDown = signal(faChevronDown);
 }
