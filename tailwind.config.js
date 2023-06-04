@@ -9,7 +9,7 @@ module.exports = {
       },
       colors: {
         primary: {
-          50: "#1f283d",
+          50: "#0c1d33",
           100: "#0b0f17",
         },
         accent: "#84d7e9",
