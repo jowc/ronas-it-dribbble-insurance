@@ -75,3 +75,27 @@ body {
         font-weight: 900;
     }
 }
+
+.mp{
+    &-height-static{
+        height: 0%;
+        animation: increase-height 2s ease forwards;
+    }
+    &-height{
+        position: absolute;
+        bottom: 0;
+        @extend .mp-height-static;
+    }
+}
+
+
+// animations
+
+@keyframes increase-height {
+    from{
+        height: 0%;
+    }
+    to{
+        height: 100%;
+    }
+}
