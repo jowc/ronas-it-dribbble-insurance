@@ -14,7 +14,7 @@ import { MpButtonDirective } from 'src/app/shared/directive/button-full.directiv
 import { gsap } from 'gsap';
 
 const tl = gsap.timeline({
-  defaults: { duration: 1, ease: 'power1.inOut', stagger: 0.4 },
+  defaults: { duration: 0.8, ease: 'slow(0.7, 0.7, false)', stagger: 0.4 },
 });
 
 @Component({
@@ -43,7 +43,7 @@ export class ChooseFundComponent implements AfterViewInit {
         }
       });
     },
-    { threshold: 0 }
+    { threshold: 0.2 }
   );
 
   ngAfterViewInit(): void {
@@ -51,7 +51,16 @@ export class ChooseFundComponent implements AfterViewInit {
   }
 
   startAnimation = () => {
-    tl.from('#fund-text span', { fontSize: 0, opacity: 0 })
+    tl.fromTo(
+      this.fundContainer.nativeElement,
+      {
+        visibility: 'invisible',
+      },
+      {
+        visibility: 'visible',
+      }
+    )
+      .from('#fund-text span', { fontSize: 0, opacity: 0 })
       .from('.mp-fund-card', {
         scale: 0,
         opacity: 0,

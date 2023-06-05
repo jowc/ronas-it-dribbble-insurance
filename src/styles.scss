@@ -76,3 +76,7 @@ body {
         font-weight: 900;
     }
 }
+
+fa-icon{
+    @extend .mp-spin;
+}

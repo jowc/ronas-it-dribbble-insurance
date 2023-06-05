@@ -3,15 +3,14 @@ import {
   OnInit,
   Component,
   signal,
-  ViewChild,
   ElementRef,
-  inject,
   ViewChildren,
   QueryList,
+  AfterViewInit,
 } from '@angular/core';
 import { MpButtonDirective } from 'src/app/shared/directive/button-full.directive';
 
-import Swiper, { Pagination, Autoplay } from 'swiper';
+import Swiper, { Pagination, Autoplay, SwiperOptions } from 'swiper';
 interface cardInterface {
   img_url: string;
   person_name: string;

@@ -4,7 +4,7 @@
     }
     &-height-static{
         height: 0%;
-        animation: increase-height 0.5s ease forwards;
+        animation: increase-height .5s ease forwards;
     }
     &-height{
         position: absolute;
@@ -12,7 +12,14 @@
         @extend .mp-height-static;
     }
     &-scale{
-        animation: scale 1.2s ease forwards;
+        animation: scale .8s ease forwards;
+
+        &-left{
+            animation: scale-left .8s ease forwards;
+        }
+        &-right{
+            animation: scale-right .8s ease forwards;
+        }
     }
 }
 
@@ -45,4 +52,28 @@
     to{
         visibility: visible;
     }
+}
+
+@keyframes scale-left {
+	0% {
+		transform: scale(0);
+		transform-origin: 0% 50%;
+	}
+
+	100% {
+		transform: scale(1);
+		transform-origin: 0% 50%;
+	}
+}
+
+@keyframes scale-right {
+	0% {
+		transform: scale(0);
+		transform-origin: 100% 50%;
+	}
+
+	100% {
+		transform: scale(1);
+		transform-origin: 100% 50%;
+	}
 }
