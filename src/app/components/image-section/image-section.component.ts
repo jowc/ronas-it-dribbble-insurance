@@ -30,7 +30,7 @@ export class ImageSectionComponent implements AfterViewInit {
         this.observer.unobserve(this.imageSection.nativeElement);
       }
     },
-    { threshold: 0.2, rootMargin: '' }
+    { threshold: 0.3, rootMargin: '' }
   );
 
   ngAfterViewInit(): void {
