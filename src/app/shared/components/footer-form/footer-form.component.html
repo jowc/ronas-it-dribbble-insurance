@@ -5,16 +5,16 @@
     </section>
 
     <section class="grid grid-cols-2 gap-x-5">
-        <div class="grid gap-y-2">
+        <div class="flex flex-col gap-y-2">
             <label class="mp-form-field" for="country">Enter the country</label>
             <input class="mp-form-field" type="text" name="country" id="country" placeholder="Australia">
         </div>
-        <div class="grid gap-y-2">
+        <div class="flex flex-col gap-y-2">
             <label class="mp-form-field" for="country">Choose travel dates</label>
             <div class="relative p-4 bg-primary-50 rounded-4xl flex justify-between items-center text-gray-500 cursor-pointer mp-form-field" #dateContainer>
                 <input class="absolute top-1 left-0" type="date" name="country" id="country" placeholder="Australia" list="dateContainer" form="dateContainer" hidden #dateField>
                 <span>11 Apr - 20 Apr</span>
-                <fa-icon [icon]="faCalendar()" />
+                <fa-icon class="animate-none" [icon]="faCalendar()" />
             </div>
         </div>
     </section>
