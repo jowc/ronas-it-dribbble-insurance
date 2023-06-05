@@ -11,7 +11,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { gsap } from 'gsap';
 
 const tl = gsap.timeline({
-  defaults: { duration: 1, ease: 'power1.inOut', stagger: 0.4 },
+  defaults: { duration: 0.8, ease: 'slow(0.7, 0.7, false)', stagger: 0.4 },
 });
 
 @Component({
@@ -41,11 +41,12 @@ export class HeroSectionComponent implements AfterViewInit {
         opacity: 0,
         transformOrigin: '0% 50%',
       })
-      .from(this.arrowDown.nativeElement, { opacity: 0 })
+      .from(this.arrowDown.nativeElement, { opacity: 0 }, '-=0.5')
       .fromTo(
         this.heroImage.nativeElement,
         { height: '0%' },
-        { height: '100%', position: 'absolute', bottom: 0, duration: 2 }
+        { height: '100%', position: 'absolute', bottom: 0, duration: 0.5 },
+        '-=1'
       );
   };
 }

@@ -1,15 +1,17 @@
-<div class="flex items-center justify-between gap-x-20">
+<div #testimonial class="flex items-center justify-between gap-x-20">
 
-    <section class="w-4/6 overflow-x-hidden">
+    <section #testimonialCard class="w-4/6 overflow-x-hidden">
         <app-testimonial-card />
     </section>
     
-    <section class="w-2/6 flex gap-x-5">
-        <div class="bg-white text-primary-100 text-2xl font-black w-10 h-10 flex rounded-full">
-            <fa-icon class="m-auto" [icon]="faAsterisk()" />
+    <section #testimonialText  class="w-2/6 flex gap-x-5">
+        <div class="bg-white text-primary-100 text-2xl font-black w-10 h-10 flex rounded-full testimonials-text">
+            <fa-icon class="m-auto animate-spin" [icon]="faAsterisk()" />
         </div>
-        <h2 class="w-3/4 -mt-5">
-            Our <br> experts <br> say
+        <h2 id="testimonials-text" class="w-3/4 -mt-5">
+            <span>Our</span> <br> 
+            <span>experts</span>  <br> 
+            <span>say</span> 
         </h2>
     </section>
 

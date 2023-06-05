@@ -1,0 +1,79 @@
+.mp{
+    &-spin{
+        animation: spin 2s linear infinite;
+    }
+    &-height-static{
+        height: 0%;
+        animation: increase-height .5s ease forwards;
+    }
+    &-height{
+        position: absolute;
+        bottom: 0;
+        @extend .mp-height-static;
+    }
+    &-scale{
+        animation: scale .8s ease forwards;
+
+        &-left{
+            animation: scale-left .8s ease forwards;
+        }
+        &-right{
+            animation: scale-right .8s ease forwards;
+        }
+    }
+}
+
+
+// Keyframes
+
+@keyframes spin {
+    from{
+        transform: rotate(0);
+    }
+    to{
+        transform: rotate(360);
+    }
+}
+
+@keyframes increase-height {
+    from{
+        height: 0%;
+    }
+    to{
+        height: 100%;
+    }
+}
+
+@keyframes scale {
+    from{
+        opacity: 0;
+        transform: scale(0);
+    }
+    to{
+        visibility: visible;
+    }
+}
+
+@keyframes scale-left {
+	0% {
+		transform: scale(0);
+		transform-origin: 0% 50%;
+	}
+
+	100% {
+		transform: scale(1);
+		transform-origin: 0% 50%;
+	}
+}
+
+@keyframes scale-right {
+	0% {
+		transform: scale(0);
+		transform-origin: 100% 50%;
+	}
+
+	100% {
+		transform: scale(1);
+		transform-origin: 100% 50%;
+	}
+}

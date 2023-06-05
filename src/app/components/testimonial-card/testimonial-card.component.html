@@ -1,5 +1,5 @@
 <div>
-    <div class="swiper max-w-2xl m-0 p-0">
+    <div #swiperElement class="swiper max-w-2xl m-0 p-0">
         <div class="swiper-wrapper  m-0 p-0">
 
             <div class="swiper-slide m-0 p-0" *ngFor="let person of testimonials()">
@@ -12,11 +12,11 @@
     
                     <section class="w-2/3 flex flex-col justify-between">
                         <section>
-                            <h3>{{ person.person_name }}</h3>
-                            <span class="text-gray-500/70 mt-4">{{ person.job_title }}</span>
-                            <p class="mt-3">{{ person.comment }}</p>
+                            <h3 #mpTestimonialCard class="mpTestimonialCard invisible mp-card-1">{{ person.person_name }}</h3>
+                            <span  #mpTestimonialCard class="text-gray-500/70 mt-4 invisible mp-card-2">{{ person.job_title }}</span>
+                            <p #mpTestimonialCard class="mt-3 invisible mp-card-3">{{ person.comment }}</p>
                         </section>
-                        <section class="mt-14">
+                        <section #mpTestimonialCard class="mt-14 invisible mp-card-4">
                             <button mpButton mpButtonTheme="full">View all services</button>
                         </section>
                     </section>

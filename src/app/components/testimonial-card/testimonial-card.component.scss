@@ -14,3 +14,9 @@
         display: flex;
     }
 }
+
+@for $i from 1 through 4 {
+    .mp-card-#{$i} {
+      animation-delay: #{300ms * $i};
+    }
+}
