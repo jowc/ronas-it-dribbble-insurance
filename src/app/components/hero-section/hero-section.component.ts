@@ -41,11 +41,12 @@ export class HeroSectionComponent implements AfterViewInit {
         opacity: 0,
         transformOrigin: '0% 50%',
       })
-      .from(this.arrowDown.nativeElement, { opacity: 0 })
+      .from(this.arrowDown.nativeElement, { opacity: 0 }, '-=0.5')
       .fromTo(
         this.heroImage.nativeElement,
         { height: '0%' },
-        { height: '100%', position: 'absolute', bottom: 0, duration: 2 }
+        { height: '100%', position: 'absolute', bottom: 0, duration: 0.5 },
+        '-=1'
       );
   };
 }

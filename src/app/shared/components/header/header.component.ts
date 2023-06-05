@@ -19,7 +19,7 @@ import { MpButtonDirective } from 'src/app/shared/directive/button-full.directiv
 import { gsap } from 'gsap';
 
 let tl = gsap.timeline({
-  defaults: { duration: 1, ease: 'power1.inOut', stagger: 0.3 },
+  defaults: { duration: 0.5, ease: 'slow(0.7, 0.7, false)', stagger: 0.3 },
 });
 @Component({
   selector: 'app-header',

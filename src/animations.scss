@@ -1,7 +1,10 @@
 .mp{
+    &-spin{
+        animation: spin 2s linear infinite;
+    }
     &-height-static{
         height: 0%;
-        animation: increase-height 2s ease forwards;
+        animation: increase-height 0.5s ease forwards;
     }
     &-height{
         position: absolute;
@@ -14,7 +17,16 @@
 }
 
 
-// animations
+// Keyframes
+
+@keyframes spin {
+    from{
+        transform: rotate(0);
+    }
+    to{
+        transform: rotate(360);
+    }
+}
 
 @keyframes increase-height {
     from{

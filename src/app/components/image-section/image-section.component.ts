@@ -30,7 +30,7 @@ export class ImageSectionComponent implements AfterViewInit {
         this.observer.unobserve(this.imageSection.nativeElement);
       }
     },
-    { threshold: 0, rootMargin: '-45px' }
+    { threshold: 0, rootMargin: '' }
   );
 
   ngAfterViewInit(): void {
@@ -38,7 +38,15 @@ export class ImageSectionComponent implements AfterViewInit {
   }
 
   startAnimation = () => {
-    tl.from(this.imageSection.nativeElement, { opacity: 0 })
+    tl.fromTo(
+      this.imageSection.nativeElement,
+      {
+        visibility: 'invisible',
+      },
+      {
+        visibility: 'visible',
+      }
+    )
       .from('.mp-image-1', { scale: 0, opacity: 0 })
       .fromTo(
         this.circleImage.nativeElement,
@@ -48,10 +56,10 @@ export class ImageSectionComponent implements AfterViewInit {
           opacity: 1,
           position: 'absolute',
           bottom: 0,
-          duration: 2,
+          duration: 0.5,
         },
         '-=1'
       )
-      .from('.mp-image-3', { scale: 0, opacity: 0 });
+      .from('.mp-image-3', { scale: 0, opacity: 0 }, '-=1');
   };
 }

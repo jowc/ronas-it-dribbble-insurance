@@ -60,7 +60,8 @@ export class ChooseFundComponent implements AfterViewInit {
       .fromTo(
         this.circleImage.nativeElement,
         { height: '0%' },
-        { height: '100%', position: 'absolute', bottom: 0, duration: 2 }
+        { height: '100%', position: 'absolute', bottom: 0, duration: 0.5 },
+        '-=1'
       );
   };
 }
