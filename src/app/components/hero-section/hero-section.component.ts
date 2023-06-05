@@ -11,7 +11,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { gsap } from 'gsap';
 
 const tl = gsap.timeline({
-  defaults: { duration: 0.8, ease: 'slow(0.7, 0.7, false)', stagger: 0.4 },
+  defaults: { duration: 1.3, ease: 'slow(0.7, 0.7, false)', stagger: 0.4 },
 });
 
 @Component({

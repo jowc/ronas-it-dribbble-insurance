@@ -12,7 +12,7 @@ import { faAsterisk } from '@fortawesome/free-solid-svg-icons';
 import { gsap } from 'gsap';
 
 const tl = gsap.timeline({
-  defaults: { duration: 0.8, ease: 'slow(0.7, 0.7, false)', stagger: 0.4 },
+  defaults: { duration: 1, ease: 'slow(0.7, 0.7, false)', stagger: 0.4 },
 });
 
 @Component({
@@ -39,7 +39,7 @@ export class TestimonialSectionComponent implements AfterViewInit {
         }
       });
     },
-    { threshold: 0 }
+    { threshold: 0.2 }
   );
 
   ngAfterViewInit(): void {
