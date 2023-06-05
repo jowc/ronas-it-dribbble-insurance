@@ -1,0 +1,36 @@
+.mp{
+    &-height-static{
+        height: 0%;
+        animation: increase-height 2s ease forwards;
+    }
+    &-height{
+        position: absolute;
+        bottom: 0;
+        @extend .mp-height-static;
+    }
+    &-scale{
+        animation: scale 1.2s ease forwards;
+    }
+}
+
+
+// animations
+
+@keyframes increase-height {
+    from{
+        height: 0%;
+    }
+    to{
+        height: 100%;
+    }
+}
+
+@keyframes scale {
+    from{
+        opacity: 0;
+        transform: scale(0);
+    }
+    to{
+        visibility: visible;
+    }
+}

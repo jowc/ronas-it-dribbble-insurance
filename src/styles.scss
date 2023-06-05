@@ -1,5 +1,6 @@
 @import './tailwind.scss';
 @import './variables.scss';
+@import './animations.scss';
 
 @import 'swiper/css';
 @import 'swiper/css/pagination';
@@ -73,29 +74,5 @@ body {
     h3{
         font-size: 2.3rem;
         font-weight: 900;
-    }
-}
-
-.mp{
-    &-height-static{
-        height: 0%;
-        animation: increase-height 2s ease forwards;
-    }
-    &-height{
-        position: absolute;
-        bottom: 0;
-        @extend .mp-height-static;
-    }
-}
-
-
-// animations
-
-@keyframes increase-height {
-    from{
-        height: 0%;
-    }
-    to{
-        height: 100%;
     }
 }

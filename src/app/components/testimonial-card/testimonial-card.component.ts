@@ -12,7 +12,6 @@ import {
 import { MpButtonDirective } from 'src/app/shared/directive/button-full.directive';
 
 import Swiper, { Pagination, Autoplay } from 'swiper';
-
 interface cardInterface {
   img_url: string;
   person_name: string;
@@ -54,16 +53,31 @@ const testimonials: cardInterface[] = [
 export class TestimonialCardComponent implements OnInit {
   testimonials = signal<cardInterface[]>(testimonials);
 
-  // @ViewChild('commentImageCircle', { static: false })
-  // circleImage!: ElementRef<HTMLImageElement>;
   @ViewChildren('commentImageCircle')
   circleImage!: QueryList<ElementRef<HTMLImageElement>>;
+
+  @ViewChildren('mpTestimonialCard')
+  testimonialCards!: QueryList<ElementRef<HTMLImageElement>>;
+
   swiperSlides = document.querySelectorAll('.swiper-slide');
 
   observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
-        if (entry.isIntersecting) entry.target.classList.add('mp-height');
+        if (entry.isIntersecting) {
+          entry.target.classList.add('mp-height');
+        }
+      });
+    },
+    { threshold: 1, rootMargin: '' }
+  );
+
+  observer2 = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('mp-scale');
+        }
       });
     },
     { threshold: 1, rootMargin: '' }
@@ -85,6 +99,10 @@ export class TestimonialCardComponent implements OnInit {
   ngAfterViewChecked() {
     this.circleImage.forEach((slide) =>
       this.observer.observe(slide.nativeElement)
+    );
+
+    this.testimonialCards.forEach((element) =>
+      this.observer2.observe(element.nativeElement)
     );
   }
 }
