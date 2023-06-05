@@ -6,7 +6,7 @@ import { faLifeRing } from '@fortawesome/free-solid-svg-icons';
 import { gsap } from 'gsap';
 
 const tl = gsap.timeline({
-  defaults: { duration: 0.5, ease: 'power1.inOut', stagger: 0.4 },
+  defaults: { duration: 1, ease: 'power1.inOut', stagger: 0.4 },
 });
 
 @Component({
@@ -19,6 +19,7 @@ const tl = gsap.timeline({
 export class FooterComponent {
   faLifeRing = signal(faLifeRing);
   @ViewChild('footerFormText') footerFormText!: ElementRef;
+  @ViewChild('footerIcon') footerIcon!: ElementRef;
 
   observer = new IntersectionObserver(
     (entires) => {
@@ -29,7 +30,7 @@ export class FooterComponent {
         }
       });
     },
-    { threshold: 0 }
+    { threshold: 0.2 }
   );
 
   ngAfterViewInit(): void {
