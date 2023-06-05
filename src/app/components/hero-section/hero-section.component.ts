@@ -8,6 +8,12 @@ import {
 import { faAsterisk } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
+import { gsap } from 'gsap';
+
+const tl = gsap.timeline({
+  defaults: { duration: 1, ease: 'power1.inOut', stagger: 0.4 },
+});
+
 @Component({
   selector: 'app-hero-section',
   standalone: true,
@@ -20,14 +26,26 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 })
 export class HeroSectionComponent implements AfterViewInit {
   faAsterisk = signal(faAsterisk);
-  observer = new IntersectionObserver(
-    (entries) => entries[0].target.classList.add('mp-height'),
-    { threshold: 1 }
-  );
-
-  @ViewChild('heroImage') heroImage!: ElementRef<HTMLImageElement>;
+  @ViewChild('arrowDown') arrowDown!: ElementRef;
+  @ViewChild('heroImage')
+  heroImage!: ElementRef<HTMLImageElement>;
 
   ngAfterViewInit(): void {
-    this.observer.observe(this.heroImage.nativeElement);
+    this.startAnimation();
   }
+
+  startAnimation = () => {
+    tl.from('#heroText span', { fontSize: 0, opacity: 0 })
+      .from('.mp-card-cols', {
+        scale: 0,
+        opacity: 0,
+        transformOrigin: '0% 50%',
+      })
+      .from(this.arrowDown.nativeElement, { opacity: 0 })
+      .fromTo(
+        this.heroImage.nativeElement,
+        { height: '0%' },
+        { height: '100%', position: 'absolute', bottom: 0, duration: 2 }
+      );
+  };
 }
