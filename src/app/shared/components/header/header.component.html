@@ -1,29 +1,29 @@
 <div class="flex justify-between items-center w-full py-10">
 
     <div class="w-3/5 flex justify-between items-center">
-        <section class="w-1/6">
+        <section #headerItems class="w-1/6 mp-headerItems">
             <fa-icon class="text-4xl text-amber-600" [icon]="faLifeRing()"></fa-icon>
         </section>
     
         <section class="w-auto">
             <nav class="flex justify-end items-center gap-x-9">
-                <div>Home</div>
-                <div>
+                <div #headerItems class="mp-headerItems">Home</div>
+                <div #headerItems class="mp-headerItems">
                     <span class="mr-2">Services</span>
                     <fa-icon class="text-sm" [icon]="faChevronDown()"/>
                 </div>
-                <div>About Us</div>
-                <div>Blog</div>
-                <div>Career</div>
+                <div #headerItems class="mp-headerItems">About Us</div>
+                <div #headerItems class="mp-headerItems">Blog</div>
+                <div #headerItems class="mp-headerItems">Career</div>
             </nav>
         </section>
     </div>
 
     <div class="w-2/5 flex justify-end items-center gap-x-5">
-        <section>
+        <section #headerItems class="mp-headerItems">
             <button class="" mpButton mpButtonTheme="full">Contact us</button>
         </section>
-        <section>
+        <section #headerItems class="mp-headerItems">
             <button mpButton mpButtonTheme="outline">
                 <fa-icon class="mr-2" [icon]="faKey()" />
                 login
