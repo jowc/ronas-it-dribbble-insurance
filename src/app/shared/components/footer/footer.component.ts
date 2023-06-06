@@ -7,6 +7,7 @@ import { gsap } from 'gsap';
 
 const tl = gsap.timeline({
   defaults: { duration: 1, ease: 'power1.inOut', stagger: 0.4 },
+  delay: 1,
 });
 
 @Component({
@@ -20,6 +21,7 @@ export class FooterComponent {
   faLifeRing = signal(faLifeRing);
   @ViewChild('footerFormText') footerFormText!: ElementRef;
   @ViewChild('footerIcon') footerIcon!: ElementRef;
+  @ViewChild('footerContainer') footerContainer!: ElementRef;
 
   observer = new IntersectionObserver(
     (entires) => {
@@ -34,15 +36,18 @@ export class FooterComponent {
   );
 
   ngAfterViewInit(): void {
-    this.observer.observe(this.footerFormText.nativeElement);
+    this.observer.observe(this.footerContainer.nativeElement);
   }
 
   startAnimation = () => {
-    tl.from(this.footerFormText.nativeElement, {
-      fontSize: 0,
-      opacity: 0,
-      transformOrigin: '0% 50%',
+    tl.to(this.footerContainer.nativeElement, {
+      visibility: 'visible',
     })
+      .from(this.footerFormText.nativeElement, {
+        fontSize: 0,
+        opacity: 0,
+        transformOrigin: '0% 50%',
+      })
       .from('#mp-footer-text-box h5', {
         scale: 0,
         opacity: 0,
