@@ -35,7 +35,11 @@ export class HeroSectionComponent implements AfterViewInit {
   }
 
   startAnimation = () => {
-    tl.from('#heroText span', { fontSize: 0, opacity: 0 })
+    tl.fromTo(
+      '#heroText span',
+      { fontSize: 0, opacity: 0 },
+      { fontSize: '6.5rem', opacity: 1 }
+    )
       .from('.mp-card-cols', {
         scale: 0,
         opacity: 0,
